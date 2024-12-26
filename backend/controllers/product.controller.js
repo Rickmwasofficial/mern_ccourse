@@ -30,12 +30,14 @@ export const updateProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
     // destructure the param to get id
     const { id } = req.params
-    
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        res.status(404).json({ success: false, message: 'Invalid Product Id'})
+    }
     try {
         await Product.findByIdAndDelete(id)
         res.status(200).json({ success: true, message: "Product Deleted" })
     } catch (error) {
-        res.status(404).json({ success: false, message: 'Product not Found'})
+        res.status(500).json({ success: false, message: 'Internal Server Error'})
     }
 }
 
