@@ -1,26 +1,22 @@
-import { Button, Stack } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+// import { Link } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import Home from './pages/Home'
+import Create from './pages/Create'
 
-function App() {
+const App = () => {
   return (
-    <Stack spacing={4} direction='row' align='center'>
-      <Button 
-        colorScheme='teal' 
-        size='md'
-        _hover={{ bg: 'teal.600' }}
-      >
-        Primary Button
-      </Button>
-
-      <Button
-        variant='outline'
-        colorScheme='purple'
-        size='md'
-        _hover={{ bg: 'purple.50' }}
-      >
-        Secondary Button
-      </Button>
-    </Stack>
+    <Box w='80%' mx='auto' h='100vh' >
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      <Footer />
+    </Box>
   )
 }
 
-export default App
+export default App;
