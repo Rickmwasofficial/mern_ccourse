@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 // import { Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router'
 import Home from './pages/Home'
 import Create from './pages/Create'
 
