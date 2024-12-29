@@ -14,7 +14,7 @@ const Home = () => {
         return (<ProductCard key={product._id} {...product} />)
     }))
     return (
-        <Grid templateColumns="repeat(3, 1fr)" flex='1' gap='6'>
+        <Grid templateColumns="repeat(3, 1fr)" flex='1' gap='6'my='40px'>
             {fetchedProducts}
         </Grid>
     )
