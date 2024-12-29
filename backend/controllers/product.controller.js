@@ -42,18 +42,20 @@ export const deleteProduct = async (req, res) => {
 }
 
 export const addProduct = async (req, res) => {
-    const product = req.body; // user will send this data
-    if (!product.name || !product.price || !product.image) {
-        return res.status(404).json({ success: false, message: "please provide all fields" })
-    }
+    if (req.method == 'POST') {
+        const product = req.body; // user will send this data
+        if (!product.name || !product.price || !product.image) {
+            return res.status(404).json({ success: false, message: "please provide all fields" })
+        }
 
-    const newProduct = new Product(product)
+        const newProduct = new Product(product)
 
-    try {
-        await newProduct.save()
-        res.status(201).json({ success: true, data: newProduct })
-    } catch (error) {
-        console.log(`Error in saving product: ${error.message}`)
-        res.status(500).json({ success: false, message: 'Internal Server Error' })
+        try {
+            await newProduct.save()
+            res.status(201).json({ success: true, data: newProduct })
+        } catch (error) {
+            console.log(`Error in saving product: ${error.message}`)
+            res.status(500).json({ success: false, message: 'Internal Server Error' })
+        }
     }
 }

@@ -8,7 +8,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:5000"
+        target: "http://localhost:5000",
+        changeOrigin: true, // This can help with CORS issues
+        secure: false, // Set to true if your backend uses HTTPS
       }
     }
   }
