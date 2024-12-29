@@ -22,7 +22,7 @@ const Navbar = () => {
         setDarkMode(prevMode => !prevMode)
     }
     return (
-        <Flex as='nav' display='flex' justify='space-between' w='100%' h='auto' align='center' p='2' borderBottomWidth={'1px'} borderBottomColor='teal' >
+        <Flex as='nav' display='flex' justify='space-between' w='100%' h='auto' align='center' p='2' top='0' position='sticky' borderBottomWidth={'1px'} borderBottomColor='teal' >
             <Link to='/'><Text>MAVERICK ITEMS</Text></Link>
             <Flex justify='space-around' gap='4'>
                 <Link to='/create'>

@@ -7,7 +7,7 @@ import { Link } from 'react-router'
 
 const Footer = () => {
   return (
-    <Flex as='nav' display='flex' justify='space-between' w='100%' h='auto' align='center' p='2' borderTopWidth={'1px'} borderTopColor='teal' position="relative" top='99vh' >
+    <Flex as='nav' display='flex' justify='space-between' w='100%' h='auto' align='center' p='2' borderTopWidth={'1px'} borderTopColor='teal' position="relative" >
       <Link to='/'><Text>MAVERICK ITEMS</Text></Link>
       <Text>By Rickmwasofficial</Text>
       <Flex justify='space-around' gap='4'>

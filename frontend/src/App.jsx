@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 // import { Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -8,14 +8,14 @@ import Create from './pages/Create'
 
 const App = () => {
   return (
-    <Box w='80%' mx='auto' h='100vh' >
+    <Flex w='80%' mx='auto' minH='100vh' flexDirection={'column'} >
       <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
         </Routes>
       <Footer />
-    </Box>
+    </Flex>
   )
 }
 
