@@ -16,26 +16,28 @@ const ProductCard = (props) => {
       })
   }
   return (
-    <Card.Root maxW="sm" overflow="hidden">
+    <Card.Root maxW="sm" size="sm" maxHeight="sm" overflow="hidden" borderWidth="1px" borderRadius="md">
       <Image
         src={props.image}
         alt="Green double couch with wooden legs"
+        width="100%" // Set the width to 100% of the card
+        height="200px" // Set a fixed height for the image
+        objectFit="cover"
       />
       <Card.Body gap="2">
         <Card.Title>{props.name}</Card.Title>
         
-        <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2">
-        {props.price}
+        <Text textStyle="xl" fontWeight="medium" letterSpacing="tight" mt="1">
+        $ {props.price}
         </Text>
-      </Card.Body>
-      <Card.Footer gap="2">
+
         <Button colorPalette="green" variant="subtle">
-            <FaRegEdit />
+            <FaRegEdit /> Edit Item
         </Button>
         <Button colorPalette="red" variant="outline" onClick={() => handleDelete(props._id)}>
-            <MdDeleteForever />
+            <MdDeleteForever /> Delete Item
         </Button>
-      </Card.Footer>
+      </Card.Body>
       <Toaster />
     </Card.Root>
   )

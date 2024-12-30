@@ -31,6 +31,15 @@ const useStore = create((set) => ({
 
         set((state) => ({ products: state.products.filter(products => products._id !== id) }))
         return { success: true, message: "Item deleted successfully" }
+    },
+    updateItem: async (id, newData) => {
+        const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(newData)
+        })
     }
 }))
 
